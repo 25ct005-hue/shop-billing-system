@@ -1,0 +1,15 @@
+if want frontend
+-open terminal cd shop-billing-system
+- cd front end
+-live-server
+opened the page in web browser
+
+if want backend 
+open terminal
+cd to backend
+node server.js
+
+
+if problem first use f12
+
+if stop the connection ctrl+c on the terminal

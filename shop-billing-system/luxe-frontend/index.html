@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Boutique - Premium Gold System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💎 Luxe Boutique Premium Billing System</h1>
+        <div id="alert-banner" class="hidden"></div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <section class="card-section">
+            <h2>🛒 Premium Checkout Terminal</h2>
+            <form id="cust-form" onsubmit="return false;">
+                <div class="input-group">
+                    <label>Customer Name (Letters Only, Max 30):</label>
+                    <input type="text" id="cust-name" placeholder="Ex: Rahul Sharma">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number Verification:</label>
+                    <div class="phone-wrapper">
+                        <span class="prefix-badge">+91</span>
+                        <input type="text" id="cust-phone" placeholder="9876543210" maxlength="10">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Payment Settlement Mode:</label>
+                    <select id="pay-mode">
+                        <option value="">-- Choose Method --</option>
+                        <option value="cash">💵 Cash Settlement</option>
+                        <option value="upi">📱 UPI Instant Transfer</option>
+                        <option value="card">💳 Premium Credit Card</option>
+                    </select>
+                </div>
+            </form>
+
+            <div class="product-selector">
+                <select id="product-dropdown" style="flex: 1;"></select>
+                <input type="number" id="product-qty" value="1" min="1" style="width: 50px;">
+                <button id="add-to-cart-btn">Add to Bill</button>
+            </div>
+
+            <table id="cart-table">
+                <thead>
+                    <tr><th>Item</th><th>Qty</th><th>Price</th><th></th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <div class="checkout-actions">
+                <h3>Grand Total: <span class="gold-text">₹<span id="cart-total">0</span></span></h3>
+                <button id="checkout-btn" class="gold-btn">Authorize Checkout Transaction</button>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <h2>📊 Manager Monitoring Console</h2>
+            <div class="metrics-grid">
+                <div class="stat-box">
+                    <h3>Monthly Revenue</h3>
+                    <p id="metric-revenue">₹0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Boutique Shelf Value</h3>
+                    <p id="metric-asset">₹0</p>
+                </div>
+            </div>
+            <div class="stat-box" style="margin-bottom:20px;">
+                <h3>Top Selling Product</h3>
+                <p id="metric-bestseller" class="gold-text">Loading...</p>
+            </div>
+
+            <h3>📦 Real-Time Stock Allocations</h3>
+            <table id="inventory-table">
+                <thead>
+                    <tr><th>Product Name</th><th>Stock Level</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="card-section security-border">
+            <h2 class="security-text">🛡️ Gatekeeper Guardrail Console</h2>
+            <p style="font-size: 12px; color: #a3a3a3; margin-bottom: 15px;">
+                Live physical asset validation registry. High-value orders are highlighted red for required safety sweeps.
+            </p>
+            <div id="gatekeeper-logs">
+                <p style="color: #666; text-align: center; margin-top: 50px;">Awaiting approved dispatch runs...</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
